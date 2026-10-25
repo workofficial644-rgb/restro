@@ -36,9 +36,354 @@
 .booking-cta{padding:66px 0;background:linear-gradient(120deg,#061a3b,#0b3269);color:#fff;position:relative;overflow:hidden}.booking-cta:after{content:"";position:absolute;right:-80px;top:-150px;width:400px;height:400px;border:1px solid rgba(245,160,0,.35);border-radius:50%;box-shadow:0 0 0 45px rgba(245,160,0,.035),0 0 0 90px rgba(245,160,0,.025)}.cta-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:45px}.cta-inner h2{color:#fff;margin-bottom:13px}.cta-inner p:not(.eyebrow){max-width:650px;color:rgba(255,255,255,.74);margin:0}.cta-actions{display:flex;gap:10px;flex-wrap:wrap;max-width:450px;justify-content:flex-end}.cta-actions .btn{font-size:.82rem}
 /* ========== END: BOOKING CTA SECTION STYLES ========== */
 
-/* ========== START: REVIEWS SECTION STYLES ========== */
-.reviews-section{background:#fff}.review-placeholder{max-width:720px;margin:0 auto;text-align:center;padding:48px 35px;border:1px dashed #cbd5e1;border-radius:var(--radius);background:var(--light)}.review-quote{font-family:Georgia,serif;font-size:4rem;color:var(--gold);line-height:1}.review-placeholder h3{font-size:1.35rem;margin:10px 0}.review-placeholder p{color:var(--muted);max-width:550px;margin:0 auto 20px}
-/* ========== END: REVIEWS SECTION STYLES ========== */
+
+/* ========== START: STAYNEST PREMIUM REVIEWS SECTION ========== */
+
+.reviews-section {
+  position: relative;
+  overflow: hidden;
+  padding: 76px 0 70px;
+  background: #F5F1E8;
+}
+
+.reviews-section .section-heading {
+  margin-bottom: 38px;
+}
+
+.reviews-section .eyebrow {
+  color: #FF8500;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.reviews-section .section-heading h2 {
+  color: #071B4A;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.15;
+  font-weight: 850;
+  letter-spacing: -0.04em;
+  margin: 10px 0 14px;
+}
+
+.reviews-section .section-heading h2 em {
+  color: #FF8500;
+  font-style: normal;
+}
+
+.reviews-section .section-intro {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #5C6375;
+  line-height: 1.8;
+}
+
+/* Carousel viewport */
+
+.reviews-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 0 24px;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 3%,
+    #000 97%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 3%,
+    #000 97%,
+    transparent
+  );
+}
+
+/* Moving track */
+
+.reviews-track {
+  display: flex;
+  align-items: stretch;
+  gap: 22px;
+  width: max-content;
+  animation: staynestReviewsScroll 65s linear infinite;
+  will-change: transform;
+}
+
+.reviews-carousel:hover .reviews-track {
+  animation-play-state: paused;
+}
+
+/* Review card */
+
+.review-card {
+  position: relative;
+  display: flex;
+  flex: 0 0 340px;
+  flex-direction: column;
+  width: 340px;
+  min-height: 285px;
+  padding: 26px;
+  border: 1px solid rgba(7, 27, 74, 0.09);
+  border-radius: 22px;
+  background: #FFFFFF;
+  box-shadow: 0 12px 35px rgba(7, 27, 74, 0.055);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 133, 0, 0.55);
+  box-shadow: 0 20px 40px rgba(7, 27, 74, 0.1);
+}
+
+/* Customer information */
+
+.review-top {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 19px;
+}
+
+.review-top img {
+  display: block;
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border: 3px solid #FFF0DD;
+  border-radius: 50%;
+  background: #F5F1E8;
+}
+
+.review-user {
+  flex: 1;
+  min-width: 0;
+}
+
+.review-user h3 {
+  margin: 0 0 5px;
+  color: #071B4A;
+  font-size: 15px;
+  line-height: 1.4;
+  font-weight: 800;
+}
+
+.review-user p {
+  margin: 0;
+  color: #858B98;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.review-mark {
+  align-self: flex-start;
+  color: #FF8500;
+  font-family: Georgia, serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 0.9;
+}
+
+/* Star rating */
+
+.review-stars {
+  margin-bottom: 13px;
+  color: #FF8500;
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: 3px;
+}
+
+/* Review description */
+
+.review-text {
+  flex: 1;
+  margin: 0 0 22px;
+  color: #5C6375;
+  font-size: 13.5px;
+  line-height: 1.9;
+}
+
+/* Card footer */
+
+.review-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 15px;
+  border-top: 1px solid #F0EEE8;
+  color: #858B98;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.review-footer span:last-child {
+  color: #FF8500;
+}
+
+/* Infinite scrolling animation */
+
+@keyframes staynestReviewsScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Bottom CTA */
+
+.reviews-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.reviews-line {
+  width: 35px;
+  height: 2px;
+  background: #FF8500;
+}
+
+.reviews-bottom p {
+  margin: 0;
+  color: #071B4A;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.reviews-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 13px 21px;
+  border: 1px solid #071B4A;
+  border-radius: 50px;
+  background: #071B4A;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.reviews-cta span {
+  color: #FF8500;
+  font-size: 18px;
+  transition: transform 0.25s ease;
+}
+
+.reviews-cta:hover {
+  border-color: #FF8500;
+  background: #FF8500;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.reviews-cta:hover span {
+  color: #FFFFFF;
+  transform: translateX(4px);
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 58px 0 52px;
+  }
+
+  .reviews-section .section-heading {
+    margin-bottom: 25px;
+  }
+
+  .reviews-track {
+    gap: 16px;
+    animation-duration: 55s;
+  }
+
+  .review-card {
+    flex-basis: 300px;
+    width: 300px;
+    min-height: 280px;
+    padding: 23px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .reviews-section {
+    padding: 45px 0 42px;
+  }
+
+  .reviews-section .section-heading h2 {
+    font-size: clamp(1.8rem, 8vw, 2.25rem);
+  }
+
+  .reviews-section .section-intro {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .review-card {
+    flex-basis: 275px;
+    width: 275px;
+    min-height: 285px;
+    padding: 21px;
+    border-radius: 19px;
+  }
+
+  .review-top img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .review-text {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .reviews-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .reviews-track {
+    animation: none;
+  }
+
+  .review-card,
+  .reviews-cta,
+  .reviews-cta span {
+    transition: none;
+  }
+}
+
+/* ========== END: STAYNEST PREMIUM REVIEWS SECTION ========== */
+
 
 /* ========== START: FAQ SECTION STYLES ========== */
 .faq-section{background:var(--light)}.faq-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(45px,8vw,100px);align-items:start}.faq-intro{position:sticky;top:calc(var(--header-height) + 30px)}.faq-intro p:not(.eyebrow){color:var(--muted);margin:20px 0 26px}.faq-list{border-top:1px solid var(--border)}.faq-item{border-bottom:1px solid var(--border)}.faq-item h3{margin:0}.faq-item button{width:100%;padding:20px 0;border:0;background:transparent;text-align:left;display:flex;justify-content:space-between;gap:20px;align-items:center;color:var(--navy);font-family:"Manrope";font-weight:800;font-size:.94rem}.faq-item button span{font-family:"Inter";font-size:1.35rem;font-weight:400;color:#a66d00;flex:0 0 auto}.faq-answer{padding:0 35px 20px 0;color:var(--muted);font-size:.87rem}.faq-answer p{margin:0}
