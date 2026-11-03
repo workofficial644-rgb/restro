@@ -102,4 +102,4 @@ This is a static website. Upload the whole project while preserving folder paths
 
 ## Updated contact details
 
-The project is currently configured with the owner-provided number `+91 93682 53357` for phone and WhatsApp. Confirm the number is correct and has WhatsApp activated before launch. The Contact section now uses a Google Maps embed for the supplied address and keeps the enquiry form beside it on desktop; on smaller screens, the layout stacks vertically. The supplied address is included in the map and footer, but confirm that it is the actual StayNest property address before publishing.
+The project is currently configured with the owner-provided number `+91 8532956393` for phone and WhatsApp. Confirm the number is correct and has WhatsApp activated before launch. The Contact section now uses a Google Maps embed for the supplied address and keeps the enquiry form beside it on desktop; on smaller screens, the layout stacks vertically. The supplied address is included in the map and footer, but confirm that it is the actual StayNest property address before publishing.

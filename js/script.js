@@ -3,9 +3,9 @@
 const STAYNEST_CONFIG = {
   // Owner-provided contact number. Verify ownership and WhatsApp activation before launch.
   // WhatsApp must be international digits only (country code + number, without +).
-  whatsappNumber: "919368253357",
+  whatsappNumber: "918532956393",
   // Phone number in international format.
-  phoneNumber: "+919368253357",
+  phoneNumber: "+918532956393",
   // Add confirmed property details in index.html before enabling public location/SEO data.
 };
 /* ========== END: CONFIGURATION ========== */
